@@ -5,16 +5,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Teacher Test = new Teacher();
+        Teacher teacherTest = new Teacher();
+        Student studentTest = new Student();
 
-        try{
+/*        try{
             Test.addTeacher();
         } catch (SQLException | ParseException e){
             System.out.println("Error adding person to database.");
-        }
+        }*/
 
 
-        Test.getTeacherList();
+        teacherTest.getTeacherList();
+        studentTest.getStudentList();
 
     }
 
