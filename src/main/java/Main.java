@@ -7,6 +7,13 @@ public class Main {
 
         Teacher teacherTest = new Teacher();
         Student studentTest = new Student();
+        Class classTest = new Class();
+
+        try {
+            classTest.addClass();
+        } catch (SQLException e){
+            System.out.println("You did something wrong mate.");
+        }
 
 /*        try{
             Test.addTeacher();
@@ -15,8 +22,8 @@ public class Main {
         }*/
 
 
-        teacherTest.getTeacherList();
-        studentTest.getStudentList();
+       /* teacherTest.getTeacherList();
+        studentTest.getStudentList();*/
 
     }
 

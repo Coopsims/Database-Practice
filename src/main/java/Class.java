@@ -19,23 +19,22 @@ public class Class {
         System.out.println("Class name?");
         String className = scan.nextLine();
 
+        Teacher teach = new Teacher();
+        teach.getTeacherList();
+
         System.out.println("Teacher's last name?");
         String lastName = scan.nextLine();
 
-        String resultSet1 = "SELECT TeacherID FROM teachers WHERE Teacher_lastname = VALUES (?);";
-        PreparedStatement stmt2 = conn.prepareStatement(resultSet1);
+        Statement stmt2 = conn.createStatement();
 
-        stmt2.setString(1, lastName);
-        ResultSet rs = stmt2.executeQuery();
-
+        ResultSet rs = stmt2.executeQuery("SELECT TeacherID FROM firsttrial.teachers WHERE Teacher_lastname = '" +lastName+"';");
+        int classId = 0;
         while (rs.next()) {
-            int classId = rs.getInt("ClassID");
-            String name = rs.getString("Class_name");
-            String teacherId = rs.getString("Class_teacher");
+            classId = rs.getInt("TeacherID");
         }
 
         stmt.setString(1, className);
-        stmt.setString(2, lastName);
+        stmt.setInt(2, classId);
 
         stmt.executeUpdate();
     }
