@@ -3,6 +3,10 @@ import java.text.ParseException;
 import java.util.Scanner;
 
 public class Teacher {
+
+    ////////////////
+    // Database info
+    ////////////////
     private final String connectionUrl = "jdbc:mysql://localhost:3306/firsttrial";
     private final String connectionUser = "root";
     private final String connectionPassword = "C00perSymin";
@@ -15,6 +19,11 @@ public class Teacher {
         Connection conn = DriverManager.getConnection(connectionUrl, connectionUser, connectionPassword);
         PreparedStatement stmt = conn.prepareStatement(updateStatement);
 
+
+        ////////////////
+        // Add teacher info
+        ////////////////
+
         System.out.println("Teacher's first name?");
         String firstName = scan.nextLine();
 
@@ -25,6 +34,10 @@ public class Teacher {
         String subjectName = scan.nextLine();
 
 
+        ////////////////
+        // puts data in insert statement and executes Query
+        ////////////////
+
         stmt.setString(1, firstName);
         stmt.setString(2, lastName);
         stmt.setString(3, subjectName);
@@ -33,6 +46,10 @@ public class Teacher {
     }
 
     public void getTeacherList() {
+
+        ////////////////
+        // Pulls all info from table
+        ////////////////
 
         try {
             Connection conn = DriverManager.getConnection(connectionUrl, connectionUser, connectionPassword);

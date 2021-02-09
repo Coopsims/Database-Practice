@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class Class {
 
+
+    ////////////////
+    // Database Info
+    ////////////////
     private final String connectionUrl = "jdbc:mysql://localhost:3306/firsttrial";
     private final String connectionUser = "root";
     private final String connectionPassword = "C00perSymin";
@@ -12,12 +16,24 @@ public class Class {
 
         Scanner scan = new Scanner(System.in);
 
+        ////////////////
+        // Connecting to database
+        ////////////////
+
         String updateStatement = "INSERT INTO class (Class_name, Class_teacher) VALUES (?, ?);";
         Connection conn = DriverManager.getConnection(connectionUrl, connectionUser, connectionPassword);
         PreparedStatement stmt = conn.prepareStatement(updateStatement);
 
+        ////////////////
+        // adding class name
+        ////////////////
+
         System.out.println("Class name?");
         String className = scan.nextLine();
+
+        ////////////////
+        // Getting and selecting Teacher for class
+        ////////////////
 
         Teacher teach = new Teacher();
         teach.getTeacherList();
@@ -33,6 +49,10 @@ public class Class {
             classId = rs.getInt("TeacherID");
         }
 
+        ////////////////
+        // Adding info to a new row in table
+        ////////////////
+
         stmt.setString(1, className);
         stmt.setInt(2, classId);
 
@@ -40,6 +60,11 @@ public class Class {
     }
 
     public void getClassList() {
+
+
+        ////////////////
+        // Pulling all information from table.
+        ////////////////
 
         try {
             Connection conn = DriverManager.getConnection(connectionUrl, connectionUser, connectionPassword);

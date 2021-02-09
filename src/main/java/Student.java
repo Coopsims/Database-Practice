@@ -16,6 +16,10 @@ public class Student {
         Connection conn = DriverManager.getConnection(connectionUrl, connectionUser, connectionPassword);
         PreparedStatement stmt = conn.prepareStatement(updateStatement);
 
+        ////////////////
+        // Add student info to the preparedStatement
+        ////////////////
+
         System.out.println("Student's first name?");
         String firstName = scan.nextLine();
 
@@ -26,6 +30,11 @@ public class Student {
         String sBirthday = scan.nextLine();
 
         Date birthday=Date.valueOf(sBirthday);
+
+        ////////////////
+        // Adds student to table
+        ////////////////
+
         stmt.setString(1, firstName);
         stmt.setString(2, lastName);
         stmt.setDate(3, birthday);
@@ -34,6 +43,10 @@ public class Student {
     }
 
     public void getStudentList() {
+
+        ////////////////
+        // Gets all info for each row in table
+        ////////////////
 
         try {
             Connection conn = DriverManager.getConnection(connectionUrl, connectionUser, connectionPassword);
