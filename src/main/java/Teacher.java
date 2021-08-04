@@ -7,9 +7,9 @@ public class Teacher {
     ////////////////
     // Database info
     ////////////////
-    private final String connectionUrl = "jdbc:mysql://localhost:3306/firsttrial";
-    private final String connectionUser = "root";
-    private final String connectionPassword = "C00perSymin";
+    private final String connectionUrl = "DATABASE-LOCATION";
+    private final String connectionUser = "USERNAME";
+    private final String connectionPassword = "PASSWORD";
 
     public void addTeacher() throws SQLException, ParseException {
 
