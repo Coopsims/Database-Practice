@@ -1,2 +1,3 @@
 Welcome! This is just a bit of messing around with mySQL and learning how to set up and interact with databases in java, feel free to use it as a rerference if you are doing anything similar
-This database was an atempt at creating a system that generated students schedules and linked those shedules to different teachers, but I didn't really get that far.
+This database was an atempt at creating a system that generated students schedules and linked those shedules to different teachers, but I didn't really get that far. 
+Also, Im not entirely sure how to add a license that states any of this code can be used for anything, but rest assured that you can use any of this code however you want, just cite this repository in your code if you do.
